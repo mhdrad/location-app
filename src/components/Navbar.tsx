@@ -1,6 +1,18 @@
 import Logo from "components/Logo";
+import { MouseEventHandler } from "react";
+import { increment } from "store/counter";
+import { useAppSelector, useAppDispatch } from "store/hooks";
 
 const Navbar = () => {
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
+
+  const onLoginClick: MouseEventHandler = (e) => {
+    e.preventDefault();
+
+    dispatch(increment());
+  };
+
   return (
     <nav
       className="navbar is-transparent"
@@ -28,7 +40,7 @@ const Navbar = () => {
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
           <a className="navbar-item" href="/">
-            Home
+            Home {count}
           </a>
 
           <div className="navbar-item has-dropdown is-hoverable">
@@ -46,7 +58,9 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button">Log in</a>
+              <a className="button" onClick={onLoginClick} href="#">
+                Log in
+              </a>
 
               <a className="button is-primary">
                 <strong>Add Places</strong>
