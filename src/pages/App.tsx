@@ -14,12 +14,12 @@ function App() {
 
   const [map, setMap] = useState<Map>();
 
-  // TODO: show spinner on isLoading
-  const { data, error, isLoading } = useGetPlacesQuery({ latitude, longitude });
-
   useEffect(() => {
     map?.setView([latitude, longitude]);
   }, [latitude, longitude]);
+
+  // TODO: show spinner on isLoading
+  const { data, error, isLoading } = useGetPlacesQuery({ latitude, longitude });
 
   return (
     <main className="home">
