@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Stacey Hill",
+    "type": "business",
+    "latitude": 51.411203,
+    "longitude": -0.303757
+  },
+  {
+    "name": "Jayden Thomas",
+    "type": "business",
+    "latitude": 52.952566,
+    "longitude": -0.952923
+  },
+  {
+    "name": "Greg Richards",
+    "type": "business",
+    "latitude": 50.855169,
+    "longitude": 0.579379
+  },
+  {
+    "name": "David James",
+    "type": "business",
+    "latitude": 55.942504,
+    "longitude": -3.221833
+  },
+  {
+    "name": "Martin King",
+    "type": "business",
+    "latitude": 53.831335,
+    "longitude": -1.547758
+  },
+  {
+    "name": "Paula Rogers",
+    "type": "business",
+    "latitude": 52.03855,
+    "longitude": -1.73215
+  },
+  {
+    "name": "Anthony Wood",
+    "type": "business",
+    "latitude": 52.988032,
+    "longitude": -2.137093
+  },
+  {
+    "name": "Caitlin Parker",
+    "type": "business",
+    "latitude": 51.493846,
+    "longitude": -3.25453
+  },
+  {
+    "name": "Isabella Fox",
+    "type": "business",
+    "latitude": 51455094.0,
+    "longitude": -2603364.0
+  },
+  {
+    "name": "Nikki Taylor",
+    "type": "business",
+    "latitude": 54.200792,
+    "longitude": -2.837128
+  },
+  {
+    "name": "Sophia Graham",
+    "type": "business",
+    "latitude": 55.017618,
+    "longitude": -1.42424
+  },
+  {
+    "name": "Theo Simpson",
+    "type": "business",
+    "latitude": 51.402343,
+    "longitude": 0.015442
+  },
+  {
+    "name": "Alan Wood",
+    "type": "business",
+    "latitude": 53.577767,
+    "longitude": -2.27343
+  }
+]

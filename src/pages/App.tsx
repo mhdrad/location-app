@@ -1,16 +1,21 @@
 import type { Map } from "leaflet";
 
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
+import { useAppSelector } from "store/hooks";
+import { useGetPlacesQuery } from "services/places";
 
 import Navbar from "components/Navbar";
 import AddPlace from "components/AddPlace";
-import { useAppSelector } from "store/hooks";
-import { useEffect, useState } from "react";
 
 function App() {
   const { latitude, longitude, zoom } = useAppSelector((state) => state.map);
 
   const [map, setMap] = useState<Map>();
+
+  // TODO: show spinner on isLoading
+  const { data, error, isLoading } = useGetPlacesQuery({ latitude, longitude });
 
   useEffect(() => {
     map?.setView([latitude, longitude]);
@@ -27,11 +32,15 @@ function App() {
           whenCreated={setMap}
         >
           <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
-          <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+
+          {data?.map((place) => (
+            <Marker position={[place.latitude, place.longitude]}>
+              <Popup>
+                Name: {place.name},<br />
+                Type: {place.type}
+              </Popup>
+            </Marker>
+          ))}
         </MapContainer>
       </div>
     </main>
