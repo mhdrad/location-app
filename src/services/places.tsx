@@ -11,9 +11,11 @@ export const placesApi = createApi({
   reducerPath: "placesApi",
   baseQuery: fetchBaseQuery({ baseUrl: "/data/" }),
   endpoints: (builder) => ({
-    getPlaces: builder.query<Place[], { latitude: number; longitude: number }>({
-      query: () => "places.json",
-    }),
+    getPlaces: builder.query<Place[], { latitude: unknown; longitude: number }>(
+      {
+        query: () => "places.json",
+      }
+    ),
   }),
 });
 
